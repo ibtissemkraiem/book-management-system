@@ -1,0 +1,38 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build and output directories
+dist/
+.next/
+out/
+coverage/
+
+# Docker files
+docker-compose.override.yml
+docker-compose.dev.yml
+.dockerignore
+
+# Editor and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# MongoDB data (if using local volumes)
+mongo-data/

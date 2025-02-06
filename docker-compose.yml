@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./book-management-backend
+    ports:
+      - "3010:3010"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/Books-Management
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./book-management-NextJS
+    ports:
+      - "80:3000"
+    
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"  
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
