@@ -1,2 +1,29 @@
-# book-management-system
-A minimal book inventory management system with CRUD functionality, Swagger API documentation, and a responsive UI. Uses NestJS, Next.js, MongoDB, and Docker for deployment.
+# Book Management System
+
+## Overview
+
+The Book Management System is a full-stack application designed to manage a collection of books. It provides functionalities to add, view, update, and delete books. The backend is built with NestJS, and the frontend is developed using Next.js. The application uses MongoDB for data storage and is containerized using Docker for easy deployment.
+
+## Features
+
+- **Backend:**
+  - RESTful API endpoints for book management.
+  - Input validation and error handling.
+  - API documentation with Swagger.
+
+- **Frontend:**
+  - Responsive UI for managing books.
+  - Forms for adding and editing book details.
+  - Integration with backend API using Axios.
+
+## Prerequisites
+
+- [Docker](https://www.docker.com/get-started) installed on your system.
+
+## Getting Started
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/book-management-system.git
+   cd book-management-system
