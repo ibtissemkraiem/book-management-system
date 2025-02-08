@@ -38,7 +38,7 @@ The Book Management System is a full-stack application designed to manage a coll
    ```bash
    docker-compose up --build
 
-The frontend will be accessible at http://localhost:3010, and the backend API will be at http://localhost:3000
+The frontend will be accessible at http://localhost:3000, and the backend API will be at http://localhost:3010
 
 **API Documentation:**
 Once the backend is running, access the Swagger UI for API documentation at http://localhost:3010/api-docs
