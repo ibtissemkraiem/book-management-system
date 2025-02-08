@@ -41,7 +41,7 @@ The Book Management System is a full-stack application designed to manage a coll
 The frontend will be accessible at http://localhost:3010, and the backend API will be at http://localhost:3000
 
 **API Documentation:**
-Once the backend is running, access the Swagger UI for API documentation at http://localhost:3000/api-docs
+Once the backend is running, access the Swagger UI for API documentation at http://localhost:3010/api-docs
 **Run Tests:**
   ```bash
    npm test
