@@ -42,3 +42,7 @@ The frontend will be accessible at http://localhost:3010, and the backend API wi
 
 **API Documentation:**
 Once the backend is running, access the Swagger UI for API documentation at http://localhost:3000/api-docs
+**Run Tests:**
+  ```bash
+   npm test
+  
