@@ -1,8 +1,9 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { Book } from './book.schema';
 import { CreateBookDto } from './dto/create-book.dto';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { UpdateBookDto } from './dto/Edit-book.dto';
 
 @ApiTags('Books')
 @Controller('books')
@@ -22,4 +23,16 @@ export class BooksController {
   async createBook(@Body() createBookDto: CreateBookDto): Promise<Book> {
     return this.booksService.createBook(createBookDto);
   }
+
+
+
+  @Put(':id')
+async updateBook(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto): Promise<Book> {
+  return this.booksService.update(id, updateBookDto);
+}
+@Delete(':id')
+async deleteBook(@Param('id') id: string): Promise<{ message: string }> {
+  await this.booksService.delete(id);
+  return { message: 'Book deleted successfully' };
+}
 }

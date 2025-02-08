@@ -1,3 +1,99 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  position: relative; 
+}
+
+.modal h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #1f2937; /* Dark gray */
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280; /* Gray */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+  color: #ef4444; /* Red on hover */
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.searchBar {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db; 
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff; 
+  color: #1f2937; 
+}
+
+.searchInput:focus {
+  border-color: #3b82f6; 
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); 
+}
+
+.searchInput::placeholder {
+  color: #9ca3af; 
+}
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff; /* White background */
+  color: #1f2937; /* Dark gray text */
+}
+
+.input:focus {
+  border-color: #3b82f6; /* Blue accent */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Subtle blue glow */
+}
+
+.input::placeholder {
+  color: #9ca3af; /* Light gray placeholder text */
+}
 .container {
   min-height: 100vh;
   background-color: #f9fafb; /* Light gray background */
@@ -57,18 +153,22 @@
   border-radius: 0.5rem;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff; /* White background */
-  color: #1f2937; /* Dark gray text */
+  transition: border-color 0.3s ease;
 }
 
 .input:focus {
   border-color: #3b82f6; /* Blue accent */
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Subtle blue glow */
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .button {
-  width: 100%;
+  flex: 1; 
   padding: 0.75rem;
   background-color: #3b82f6; /* Blue accent */
   color: white;
@@ -78,11 +178,40 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
 }
 
-.button:hover {
-  background-color: #2563eb; /* Darker blue */
+.button:disabled {
+  background-color: #9ca3af; /* Gray when disabled */
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #2563eb; 
+}
+
+.cancelButton {
+  width: 40px; 
+  height: 40px; 
+  background-color: #ef4444; /* Red */
+  color: white;
+  border: none;
+  border-radius: 50%; 
+  font-size: 1.5rem; 
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.cancelButton:hover {
+  background-color: #dc2626; 
+}
+
+.cancelButton:disabled {
+  background-color: #9ca3af; 
+  cursor: not-allowed;
 }
 
 .bookList {
@@ -152,26 +281,52 @@
 }
 
 .editButton {
-  background-color: #fbbf24; /* Yellow */
-  color: #1f2937; /* Dark gray */
+  background-color: #fbbf24; 
+  color: #1f2937; 
 }
 
 .editButton:hover {
-  background-color: #f59e0b; /* Darker yellow */
+  background-color: #f59e0b;
 }
 
 .deleteButton {
-  background-color: #ef4444; /* Red */
+  background-color: #ef4444; 
   color: white;
 }
 
 .deleteButton:hover {
-  background-color: #dc2626; /* Darker red */
+  background-color: #dc2626;
 }
-.input::placeholder {
-  color: #9ca3af; /* Light gray */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; 
 }
-.input:disabled {
-  background-color: #f3f4f6; /* Light gray */
-  cursor: not-allowed;
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.modal h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #1f2937; /* Dark gray */
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
 }
