@@ -9,5 +9,8 @@ export class Book extends Document {
   @Prop({ required: true })
   author: string;
 }
-
+export interface IBook extends Document {
+  title: string;
+  author: string;
+ }
 export const BookSchema = SchemaFactory.createForClass(Book);

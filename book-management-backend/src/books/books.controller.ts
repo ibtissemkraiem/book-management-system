@@ -9,22 +9,18 @@ import { UpdateBookDto } from './dto/Edit-book.dto';
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
-
   @Get()
   @ApiOperation({ summary: 'Get all books' })
   @ApiResponse({ status: 200, description: 'List of books', type: [Book] })
   async getBooks(): Promise<Book[]> {
     return this.booksService.getAllBooks();
   }
-
   @Post()
   @ApiOperation({ summary: 'Add a new book' })
   @ApiResponse({ status: 201, description: 'Book successfully created', type: Book })
   async createBook(@Body() createBookDto: CreateBookDto): Promise<Book> {
-    return this.booksService.createBook(createBookDto);
+    return this.booksService.create(createBookDto);
   }
-
-
 
   @Put(':id')
 async updateBook(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto): Promise<Book> {
